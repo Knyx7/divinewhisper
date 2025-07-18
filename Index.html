@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Your Bible Verse</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background: #fdfcf8;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+    .card {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+    h1 {
+      font-size: 24px;
+      color: #5a3e85;
+    }
+    .verse {
+      font-size: 20px;
+      margin: 20px 0;
+      font-style: italic;
+      color: #444;
+    }
+    .ref {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #2e2e2e;
+    }
+    .footer {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>💖 Your Verse Today 💖</h1>
+    <div class="verse" id="verse">Loading verse...</div>
+    <div class="ref" id="ref"></div>
+  </div>
+  <div class="footer">FaithFilly 🐻 | Powered by God</div>
+
+  <script>
+    const verses = [
+      { verse: "For I know the plans I have for you, declares the Lord...", ref: "Jeremiah 29:11" },
+      { verse: "Fear not, for I am with you; be not dismayed...", ref: "Isaiah 41:10" },
+      { verse: "I can do all things through Christ who strengthens me.", ref: "Philippians 4:13" },
+      { verse: "Trust in the Lord with all your heart...", ref: "Proverbs 3:5-6" },
+      { verse: "The Lord is my shepherd; I shall not want.", ref: "Psalm 23:1" },
+      { verse: "Come to me, all who are weary and burdened...", ref: "Matthew 11:28" }
+    ];
+
+    const chosen = verses[Math.floor(Math.random() * verses.length)];
+    document.getElementById("verse").innerText = `"${chosen.verse}"`;
+    document.getElementById("ref").innerText = chosen.ref;
+  </script>
+</body>
+</html>
